@@ -182,7 +182,7 @@ def main():
 
         cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_PLAIN, 3,
                     (0, 0, 0), 3)
-        cv2.polylines(img, boundary, True,(0,255,0), 3)
+        cv2.polylines(img, [boundary.reshape((-1, 1, 2))], True,(0,255,0), 3)
 
         cv2.imshow("Image", img)
         cv2.waitKey(10)
